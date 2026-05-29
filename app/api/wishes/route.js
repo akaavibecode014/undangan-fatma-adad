@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { getWishesFromSheet } from "@/lib/googleSheets";
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+// export const dynamic = 'force-dynamic'; // Dihapus karena membuat server bekerja terlalu keras
+export const revalidate = 2; // Cache disimpan selama 2 detik, lalu diperbarui di latar belakang
 
 export async function GET() {
   try {
