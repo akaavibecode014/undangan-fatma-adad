@@ -19,7 +19,7 @@ export default function RSVPGuestbook({ guestName }) {
   const fetchWishes = async () => {
     setLoadingWishes(true);
     try {
-      const res = await fetch("/api/wishes");
+      const res = await fetch("/api/wishes", { cache: "no-store" });
       if (res.ok) { const data = await res.json(); setWishes(data.wishes || []); }
     } catch { /* silent */ }
     setLoadingWishes(false);

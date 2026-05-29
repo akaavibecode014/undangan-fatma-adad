@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { getWishesFromSheet } from "@/lib/googleSheets";
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   try {
     if (process.env.GOOGLE_SHEET_ID && process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL) {
